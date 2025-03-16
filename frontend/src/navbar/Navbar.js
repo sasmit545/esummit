@@ -46,7 +46,7 @@ const Navbar = () => {
       )}
     </nav>
 
-    <div style={{width:'100%', height:"75px",position:"relative"}} >
+    <div style={{width:'100%', height:"75px",position:"relative",backgroundImage: "url('background.png')"}}  >
 
     </div>
 </>

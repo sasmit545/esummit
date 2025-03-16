@@ -1,7 +1,7 @@
 import React from "react";
 import { FaInstagram, FaTwitter, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
-
+import Events from "../Event/Events";
 const About = () => {
   return (
     <>
@@ -130,7 +130,7 @@ const About = () => {
           </div>
         </section>
 
-       
+       <Events/>
          
        
       </div>
