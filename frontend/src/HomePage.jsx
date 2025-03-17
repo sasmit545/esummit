@@ -2,7 +2,8 @@ import React from "react";
 import About from "./About/about";
 import InvestorsPage from './InvestorsPage';
 import SponsorsPage from './SponsorsPage';
-import Countdown from './TimeLeft'
+import Countdown from './TimeLeft';
+import { motion } from "framer-motion";
 
 const ESummitPage = () => {
   return (
