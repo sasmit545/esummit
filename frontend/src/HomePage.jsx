@@ -1,19 +1,16 @@
 import React from "react";
-import SponsorsPage from "./SponsorsPage";
-import InvestorsPage from "./InvestorsPage";
-import Countdown from "../TimeLeft";
-import SocialFeed from "./SocialFeed";
-
+import About from "./About/about";
 const ESummitPage = () => {
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-[#0A1929] overflow-hidden relative text-white text-center font-sans">
+    <>
+    <div className="flex flex-col justify-center items-center min-h-screen  overflow-hidden relative text-white text-center font-sans">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
+        {/* <img
           src="/background.png"
           alt="Background"
           className="w-full h-full object-cover opacity-70"
-        />
+        /> */}
       </div>
 
       <div className="relative z-10 max-w-7xl w-full mx-auto px-4 py-12">
@@ -50,6 +47,9 @@ const ESummitPage = () => {
       <InvestorsPage />
       <SponsorsPage />
     </div>
+
+    <About/>
+    </>
   );
 };
 
