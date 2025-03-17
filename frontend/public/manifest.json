@@ -1,11 +1,11 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "IITP E-Cell",
+  "name": "IIT Patna E-Cell Official Website",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "./e_cell_logo.jpg",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/jpeg"
     },
     {
       "src": "logo192.png",
@@ -18,8 +18,18 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "description": "Official website of IIT Patna E-Cell. Connecting entrepreneurs, startups, and students.",
+  "shortcuts": [
+    {
+      "name": "Register for E-Summit",
+      "short_name": "E-Summit",
+      "description": "Sign up for the E-Summit event",
+      "url": "/register",
+      "icons": [{ "src": "logo192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
 }
