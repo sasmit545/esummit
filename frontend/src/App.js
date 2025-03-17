@@ -6,9 +6,6 @@ import SponsorsPage from './SponsorsPage';
 // import Hero from './component/hero_section/Hero';
 import Team from './team';
 import EventPage from './EventPage';
-import InvestorsPage from './InvestorsPage';
-import SponsorsPage from './SponsorsPage';
-
 
 const App = () => {
   return (
