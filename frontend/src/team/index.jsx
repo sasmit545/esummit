@@ -91,7 +91,7 @@ const Team = () => {
             ],
         },
     ];
-    
+
     const advisory_data = [
         {
             name: "Arthur Melo",
@@ -120,64 +120,69 @@ const Team = () => {
 
     return (
         <>
-        <div
-        className="fixed inset-0 bg-no-repeat bg-cover bg-center z-[-1]"
-        style={{ backgroundImage: "url('/main/background.png')" }}
-      ></div>
-        <section className=" ">
-        <div className="container px-6 py-10 mx-auto">
-            <h1 className="text-3xl font-semibold text-center text-gray-800 capitalize dark:text-white">
-                Meet Our Team
-            </h1>
+            <div
+                className="fixed inset-0 bg-no-repeat bg-cover bg-center z-[-1]"
+                style={{ backgroundImage: "url('/main/background.png')" }}
+            ></div>
+            <section>
+                <div className="container px-6 py-10 mx-auto">
+                    <h1 className="text-3xl font-semibold text-center text-white">
+                        Meet Our Team
+                    </h1>
 
-            <p className="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">
-                A team of professionals dedicated to excellence.
-            </p>
+                    <p className="max-w-2xl mx-auto my-6 text-center text-gray-300">
+                        A team of professionals dedicated to excellence.
+                    </p>
 
-            {head_data.map((category, index) => (
-                <div key={index}>
-                    <h3 className="text-xl font-semibold text-center text-gray-800 capitalize lg:text-2xl dark:text-white mt-6">
-                        {category.role}
-                    </h3>
-                    <div className="grid grid-cols-1 gap-6 mt-6 sm:gap-8 xl:mt-8 md:grid-cols-2 xl:grid-cols-2">
-                        {category.data.map((member, subIndex) => (
-                            <div
-                                key={subIndex}
-                                className="group flex flex-col items-center p-6 transition-all duration-300 transform border bg-opacity-90 bg-gray-800 rounded-xl hover:shadow-lg hover:scale-105 dark:border-gray-700"
-                            >
-                                <img
-                                    className="object-cover w-36 h-36 rounded-full ring-4 ring-gray-300 dark:ring-gray-600 group-hover:ring-[#D36D36] dark:group-hover:ring-[#D36D36] transition-all duration-300"
-                                    src={member.image}
-                                    alt={member.name}
-                                />
-                                <h1 className="mt-2 text-xl font-bold text-gray-800 dark:text-white">
-                                    {member.name}
-                                </h1>
-                                <p className="mt-1 text-sm font-medium dark:text-[#D36D36]">
-                                    {member.role}
-                                </p>
-                                <div className="flex mt-4 space-x-4">
-                                    {Object.entries(member.socials).map(([platform, link]) => (
-                                        <a key={platform} href={link} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300">
-                                            {platform === "linkedin" && <FaLinkedinIn className="w-5 h-5" />}
-                                            {platform === "twitter" && <FaTwitter className="w-5 h-5" />}
-                                            {platform === "facebook" && <FaFacebookF className="w-5 h-5" />}
-                                            {platform === "instagram" && <FaInstagram className="w-5 h-5" />}
-                                            {platform === "github" && <FaGithub className="w-5 h-5" />}
-                                        </a>
-                                    ))}
-                                </div>
+                    {head_data.map((category, index) => (
+                        <div key={index}>
+                            <h3 className="text-xl font-semibold text-center text-white lg:text-2xl mt-6">
+                                {category.role}
+                            </h3>
+                            <div className="grid grid-cols-1 gap-6 mt-6 sm:gap-8 xl:mt-8 md:grid-cols-2 xl:grid-cols-2">
+                                {category.data.map((member, subIndex) => (
+                                    <div
+                                        key={subIndex}
+                                        className="group flex flex-col items-center p-6 transition-all duration-300 transform border border-gray-700 bg-gray-800 bg-opacity-90 rounded-xl hover:shadow-lg hover:scale-105"
+                                    >
+                                        <img
+                                            className="object-cover w-36 h-36 rounded-full ring-4 ring-gray-600 group-hover:ring-[#D36D36] transition-all duration-300"
+                                            src={member.image}
+                                            alt={member.name}
+                                        />
+                                        <h1 className="mt-2 text-xl font-bold text-white">
+                                            {member.name}
+                                        </h1>
+                                        <p className="mt-1 text-sm font-medium text-[#D36D36]">
+                                            {member.role}
+                                        </p>
+                                        <div className="flex mt-4 space-x-4">
+                                            {Object.entries(member.socials).map(([platform, link]) => (
+                                                <a
+                                                    key={platform}
+                                                    href={link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-gray-300 hover:text-blue-400 transition-colors duration-300"
+                                                >
+                                                    {platform === "linkedin" && <FaLinkedinIn className="w-5 h-5" />}
+                                                    {platform === "twitter" && <FaTwitter className="w-5 h-5" />}
+                                                    {platform === "facebook" && <FaFacebookF className="w-5 h-5" />}
+                                                    {platform === "instagram" && <FaInstagram className="w-5 h-5" />}
+                                                    {platform === "github" && <FaGithub className="w-5 h-5" />}
+                                                </a>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
-            ))}
-        </div>
-      
-    </section>
-        
+            </section>
         </>
-        
+
+
     );
 };
 
