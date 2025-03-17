@@ -1,4 +1,8 @@
 import React from "react";
+import SponsorsPage from "./SponsorsPage";
+import InvestorsPage from "./InvestorsPage";
+import Countdown from "../TimeLeft";
+import SocialFeed from "./SocialFeed";
 
 const ESummitPage = () => {
   return (
@@ -41,6 +45,10 @@ const ESummitPage = () => {
           WHERE CREATIVITY MEETS CAPITAL
         </h2>
       </div>
+      <Countdown/>
+      <SocialFeed/>
+      <InvestorsPage />
+      <SponsorsPage />
     </div>
   );
 };
