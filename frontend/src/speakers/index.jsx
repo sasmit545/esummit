@@ -50,7 +50,7 @@ const SpeakerCard = ({ speaker, index }) => {
       <div className="shadow-xl bg-gray-800 text-white rounded-2xl overflow-hidden flex flex-col sm:flex-row p-0 h-auto sm:h-96 transition-all hover:shadow-2xl hover:scale-[1.02]">
         {/* Image Section */}
         <div className="sm:w-1/3 w-full">
-          <div className="relative h-full sm:h-full">
+          <div className="relative h-80 sm:h-full">
             <img
               className="w-full h-full object-cover rounded-t-2xl sm:rounded-none"
               src={speaker.image}
@@ -100,7 +100,7 @@ const SpeakerCard = ({ speaker, index }) => {
           </div>
 
           {/* Bio */}
-          <p className="text-gray-300 my-4 text-sm sm:text-base line-clamp-4">{speaker.bio}</p>
+          <p className="text-gray-300 my-4 text-sm sm:text-base ">{speaker.bio}</p>
 
           {/* Topics */}
           <div>
