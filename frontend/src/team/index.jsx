@@ -1,6 +1,8 @@
 import React from "react";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaGithub } from "react-icons/fa";
 import '../App.css';
+
+
 const Team = () => {
     const head_data = [
         {
@@ -117,7 +119,12 @@ const Team = () => {
     ];
 
     return (
-        <section className="bg-white dark:bg-gray-900">
+        <>
+        <div
+        className="fixed inset-0 bg-no-repeat bg-cover bg-center z-[-1]"
+        style={{ backgroundImage: "url('/main/background.png')" }}
+      ></div>
+        <section className=" ">
         <div className="container px-6 py-10 mx-auto">
             <h1 className="text-3xl font-semibold text-center text-gray-800 capitalize dark:text-white">
                 Meet Our Team
@@ -136,7 +143,7 @@ const Team = () => {
                         {category.data.map((member, subIndex) => (
                             <div
                                 key={subIndex}
-                                className="group flex flex-col items-center p-6 transition-all duration-300 transform border bg-white dark:bg-gray-800 rounded-xl hover:shadow-lg hover:scale-105 dark:border-gray-700"
+                                className="group flex flex-col items-center p-6 transition-all duration-300 transform border bg-opacity-90 bg-gray-800 rounded-xl hover:shadow-lg hover:scale-105 dark:border-gray-700"
                             >
                                 <img
                                     className="object-cover w-36 h-36 rounded-full ring-4 ring-gray-300 dark:ring-gray-600 group-hover:ring-[#D36D36] dark:group-hover:ring-[#D36D36] transition-all duration-300"
@@ -166,7 +173,69 @@ const Team = () => {
                 </div>
             ))}
         </div>
+        <div className="text-white py-10 px-8 md:px-16 relative">
+        <img
+          src="/main/page_head _1.png"
+          alt="E-Summit Logo"
+          className="w-[218px] mb-8"
+        />
+
+        <div className="text-white text-center md:text-left">
+          <h2 className="text-2xl font-bold mb-6">IMPORTANT CONTACTS</h2>
+
+          <div className="space-y-6">
+            <div>
+              <p className="font-bold text-lg">
+                TANAY CHHAJED:{" "}
+                <span className="text-[#ffffff]">8852874830</span>
+              </p>
+              <p className="text-sm text-gray-400">OVERALL COORDINATORS</p>
+            </div>
+
+            <div>
+              <p className="font-bold text-lg">
+                MAYANK SEN: <span className="text-[#ffffff]">7023256707</span>
+              </p>
+              <p className="text-sm text-gray-400">OVERALL COORDINATORS</p>
+            </div>
+
+            <div>
+              <p className="font-bold text-lg">
+                NALIN: <span className="text-[#ffffff]">8789727404</span>
+              </p>
+              <p className="text-sm text-gray-400">HEAD EVENTS</p>
+            </div>
+          </div>
+        </div>
+        {/* Socials Section */}
+        <div class="md:absolute md:right-[6rem] md:bottom-[17rem] flex flex-col gap-6 mt-10 md:mt-0 items-center md:items-start text-center">
+          <h2 class="text-2xl font-bold text-center">SOCIALS</h2>
+          <div class="flex gap-8 md:justify-start justify-center">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="group">
+              <img alt="Instagram" class="w-8 h-8 transition-transform duration-300 transform group-hover:scale-110" src="/main/instagram.png" />
+            </a>
+            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" class="group">
+              <img alt="Twitter" class="w-8 h-8 transition-transform duration-300 transform group-hover:scale-110" src="/main/twitter.png" />
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="group">
+              <img alt="Facebook" class="w-8 h-8 transition-transform duration-300 transform group-hover:scale-110" src="/main/facebook.png" />
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="group">
+              <img alt="LinkedIn" class="w-8 h-8 transition-transform duration-300 transform group-hover:scale-110" src="/main/linkedin.png" />
+            </a>
+          </div>
+        </div>
+
+        <img
+          src="/main/blue_shapes.png"
+          alt="Background Shape"
+          className="absolute bottom-0 right-0 w-[68%] z-[-1]"
+        />
+      </div>
     </section>
+        
+        </>
+        
     );
 };
 
