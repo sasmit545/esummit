@@ -14,9 +14,7 @@ const Navbar = () => {
   };
 
   // Function to check if a link is active
-  const isActive = (path) => {
-    return location.pathname === path;
-  };
+  const isActive = (path) => location.pathname === path;
 
   return (
     <>
@@ -35,51 +33,21 @@ const Navbar = () => {
         </Link>
 
         {/* Navbar Links */}
-        <ul className={`md:flex gap-10 hidden`}>
-          <li>
-            <Link
-              to="/"
-              className={`hover:text-[#00aaff] transition-all ${
-                isActive('/') ? 'text-[#00aaff] font-bold' : ''
-              }`}
-              onClick={closeNavbar}
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/events"
-              className={`hover:text-[#00aaff] transition-all ${
-                isActive('/events') ? 'text-[#00aaff] font-bold' : ''
-              }`}
-              onClick={closeNavbar}
-            >
-              Events
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/speakers"
-              className={`hover:text-[#00aaff] transition-all ${
-                isActive('/speakers') ? 'text-[#00aaff] font-bold' : ''
-              }`}
-              onClick={closeNavbar}
-            >
-              Speakers
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/team"
-              className={`hover:text-[#00aaff] transition-all ${
-                isActive('/team') ? 'text-[#00aaff] font-bold' : ''
-              }`}
-              onClick={closeNavbar}
-            >
-              Team
-            </Link>
-          </li>
+        <ul className={`md:flex gap-10 hidden text-[20px]`}>
+          {['/', '/events', '/speakers', '/team'].map((path, index) => (
+            <li key={index}>
+              <Link
+                to={path}
+                className={`transition-all pb-2 break-words ${
+                  isActive(path) ? 'text-[#00aaff] font-bold' : ''
+                } hover:shadow-[0_3px_0_#00aaff]`}
+                onClick={closeNavbar}
+                style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}
+              >
+                {path === '/' ? 'Home' : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
+              </Link>
+            </li>
+          ))}
         </ul>
 
         {/* Hamburger Icon */}
@@ -101,50 +69,20 @@ const Navbar = () => {
               marginTop: '12',
             }}
           >
-            <li>
-              <Link
-                to="/"
-                className={`hover:text-[#00aaff] ${
-                  isActive('/') ? 'text-[#00aaff] font-bold' : ''
-                }`}
-                onClick={closeNavbar}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/events"
-                className={`hover:text-[#00aaff] ${
-                  isActive('/events') ? 'text-[#00aaff] font-bold' : ''
-                }`}
-                onClick={closeNavbar}
-              >
-                Events
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/speakers"
-                className={`hover:text-[#00aaff] ${
-                  isActive('/speakers') ? 'text-[#00aaff] font-bold' : ''
-                }`}
-                onClick={closeNavbar}
-              >
-                Speakers
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/team"
-                className={`hover:text-[#00aaff] ${
-                  isActive('/team') ? 'text-[#00aaff] font-bold' : ''
-                }`}
-                onClick={closeNavbar}
-              >
-                Team
-              </Link>
-            </li>
+            {['/', '/events', '/speakers', '/team'].map((path, index) => (
+              <li key={index}>
+                <Link
+                  to={path}
+                  className={`text-[20px] hover:shadow-[0_3px_0_#00aaff] ${
+                    isActive(path) ? 'text-[#00aaff] font-bold' : ''
+                  }`}
+                  onClick={closeNavbar}
+                  style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}
+                >
+                  {path === '/' ? 'Home' : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
+                </Link>
+              </li>
+            ))}
           </ul>
         )}
       </nav>
