@@ -3,31 +3,44 @@ import { FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const speakers = [
   {
-    name: "Elon Musk",
-    designation: "CEO, Tesla & SpaceX",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_-KLtd5bvMkSeXrPa6RTc7f8cd36AWgbErQ&s",
-    bio: "Elon Musk is a business magnate and investor. He is the CEO of Tesla, SpaceX, Neuralink, and The Boring Company. He is known for pushing the boundaries of space travel, electric vehicles, and AI.",
-    topics: ["Space Exploration", "AI & Innovation", "Entrepreneurship"],
-    socials: { linkedin: "#", twitter: "#", instagram: "#" },
+    name: "Amit Lodha",
+    designation: "IG of Police, IPS Officer",
+    image: "/main/amit.jpg",
+    bio: "Amit Lodha is an IIT graduate and IPS officer known for his work in Bihar. He has been involved in several high-profile cases and has written books like 'Bihar Diaries' and 'Life in the Uniform.' He is the inspiration behind the Netflix series 'Khakee: The Bihar Chapter.'",
+    topics: ["Law Enforcement", "Leadership", "Civic Governance"],
+    socials: { 
+      linkedin: "https://www.linkedin.com/in/amit-lodha-07452776/", 
+      twitter: "https://x.com/ipsamitlodha7?lang=en", 
+      instagram: "https://www.instagram.com/ipsamitlodha7" 
+    },
   },
   {
-    name: "Sundar Pichai",
-    designation: "CEO, Google",
-    image: "https://assets.bizclikmedia.net/668/6efa624d603f2d6bb39f4ffd6e2461a6:87093b7c50b1e36984a1d0f48111c3a5/sundar-pichai.jpg",
-    bio: "Sundar Pichai is the CEO of Google and Alphabet. Under his leadership, Google has expanded its AI initiatives and cloud computing services globally.",
-    topics: ["AI in Business", "Cloud Computing", "Leadership"],
-    socials: { linkedin: "#", twitter: "#", instagram: "#" },
+    name: "Anubhav Dubey",
+    designation: "Co-Founder, Chai Sutta Bar",
+    image: "/main/csb.jpg",
+    bio: "Anubhav Dubey is the co-founder of Chai Sutta Bar, a popular café chain in India. Despite not being able to crack exams for prestigious institutions like IIT or IIM, he built a successful business through perseverance and entrepreneurial spirit.",
+    topics: ["Entrepreneurship", "Resilience", "Innovation"],
+    socials: { 
+      linkedin: "https://in.linkedin.com/in/anubhavdubey", 
+      twitter: "https://x.com/tbhanubhav?lang=en", 
+      instagram: "https://www.instagram.com/anubhavdubey1/?hl=en" 
+    },
   },
   
   {
-    name: "Satya Nadella",
-    designation: "CEO, Microsoft",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROw8Nq408pFWDn1mk1o1q9G3fBmhKjBald6a62P7FHGQoIp7mBl2Keinw-LKJNBSSYb2C72gO5pmRS99ugSQAJYT5nAoexSavnyxl24VY",
-    bio: "Satya Nadella transformed Microsoft by shifting its focus to cloud computing, AI, and enterprise solutions. He is a strong advocate for digital transformation.",
-    topics: ["Cloud & AI", "Digital Transformation", "Future of Work"],
-    socials: { linkedin: "#", twitter: "#", instagram: "#" },
+    name: "Sandeep Jain",
+    designation: "Founder, Geeks for Geeks",
+    image: "/main/gfg.jpeg",
+    bio: "Sandeep Jain is the founder of GeeksforGeeks, a leading ed-tech platform. He started GeeksforGeeks to help students prepare for placements and has built a community of millions of tech enthusiasts.",
+    topics: ["Education Technology", "Career Development", "Computer Science"],
+    socials: { 
+      linkedin: "https://in.linkedin.com/in/sandeep-jain-", 
+      twitter: "https://twitter.com/sandeep_jain?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor", 
+      instagram: "https://www.instagram.com/sandeep_gfg/?hl=en" 
+    },
   },
 ];
+
 
 const SpeakerCard = ({ speaker, index }) => {
   return (
@@ -37,8 +50,8 @@ const SpeakerCard = ({ speaker, index }) => {
 >
   <div className="shadow-xl bg-gray-700 text-white rounded-2xl overflow-hidden flex flex-col md:flex-row p-0 h-auto md:h-96 transition-all hover:shadow-2xl hover:scale-[1.02]">
     {/* Image Section */}
-    <div className="md:order-2 md:w-1/2">
-      <div className="relative h-72 md:h-full">
+    <div className=" w-1/3">
+      <div className="relative h-80 md:h-full">
         <img
           className="w-full h-full object-cover rounded-t-2xl md:rounded-none"
           src={speaker.image}
@@ -115,7 +128,7 @@ const SpeakerCard = ({ speaker, index }) => {
 
 const SpeakersPage = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-10">
+    <div className="min-h-screen text-white p-10">
       <header className="text-center mb-12">
         <h1 className="text-5xl font-bold">E-Summit Speakers</h1>
         <p className="text-lg text-gray-400 mt-2">
