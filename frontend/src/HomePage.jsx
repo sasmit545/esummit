@@ -4,7 +4,7 @@ import InvestorsPage from './InvestorsPage';
 import SponsorsPage from './SponsorsPage';
 import Countdown from './TimeLeft';
 import { motion } from "framer-motion";
-
+import HorizontalSpeakers from "./speakers/horz";
 const ESummitPage = () => {
   return (
     <>
@@ -43,6 +43,9 @@ const ESummitPage = () => {
         </div>
         <Countdown />
 
+        <About />
+        <HorizontalSpeakers />
+
         <div className="w-full my-16">
           <InvestorsPage />
         </div>
@@ -51,7 +54,7 @@ const ESummitPage = () => {
         </div>
       </div>
 
-      <About />
+      
     </>
   );
 };
