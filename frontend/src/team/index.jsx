@@ -111,7 +111,7 @@ const Team = () => {
                 <h2 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white mt-8">
                     Our Advisory Team
                 </h2>
-                <div className="grid grid-cols-1 gap-6 mt-6 sm:gap-8 xl:mt-8 md:grid-cols-2 xl:grid-cols-3">
+                <div className="grid grid-cols-1 gap-6 mt-6 sm:gap-8 xl:mt-8 md:grid-cols-2 xl:grid-cols-2">
                     {advisory_data.map((advisor, index) => (
                         <div
                             key={index}
@@ -150,7 +150,7 @@ const Team = () => {
                         <h3 className="text-xl font-semibold text-center text-gray-800 capitalize lg:text-2xl dark:text-white mt-6">
                             {category.role}
                         </h3>
-                        <div className="grid grid-cols-1 gap-6 mt-6 sm:gap-8 xl:mt-8 md:grid-cols-2 xl:grid-cols-4">
+                        <div className="grid grid-cols-1 gap-6 mt-6 sm:gap-8 xl:mt-8 md:grid-cols-2 xl:grid-cols-2">
                             {category.data.map((member, subIndex) => (
                                 <div
                                     key={subIndex}

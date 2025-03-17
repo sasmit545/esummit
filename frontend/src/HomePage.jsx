@@ -2,33 +2,44 @@ import React from "react";
 
 const ESummitPage = () => {
   return (
-    <div className="flex justify-center items-center h-screen bg-black overflow-hidden relative text-white text-center font-sans">
-      <img
-        src="background.png"
-        alt="Background"
-        className="absolute w-full h-full object-cover animate-fadeIn"
-      />
-      <div className="relative z-10 p-5 animate-slideUp">
-        <div className="relative inline-block">
+    <div className="flex flex-col justify-center items-center min-h-screen bg-[#0A1929] overflow-hidden relative text-white text-center font-sans">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src="/background.png"
+          alt="Background"
+          className="w-full h-full object-cover opacity-70"
+        />
+      </div>
+
+      <div className="relative z-10 max-w-7xl w-full mx-auto px-4 py-12">
+        
+        {/* E-Summit Logo Section */}
+        <div className="relative flex flex-col items-center mb-4">
           <img
-            src="bulb.png"
-            alt="Bulb"
-            className="absolute mt-12 w-4/5 h-full object-contain opacity-0 animate-fadeIn delay-1000"
-          />
-          <img
-            src="es2.png"
+            src="/es2.svg"
             alt="E-Summit Logo"
-            className="relative w-4/5 h-auto animate-zoomIn"
+            className="w-[80%] max-w-[900px] h-auto"
+          />
+
+          {/* Bulb Image */}
+          <img
+            src="/bulb.svg"
+            alt="Bulb"
+            className="absolute top-1/2 left-1/2 w-[50%] max-w-[400px] h-auto transform -translate-x-1/2 -translate-y-1/2 mix-blend-overlay opacity-50"
           />
         </div>
-        <h3 className="text-2xl font-bold opacity-0 animate-fadeIn delay-500"></h3>
-        <p className="absolute left-[1050px] top-[270px] w-[170.29px] h-[106.85px] flex flex-col justify-center font-poppins font-bold text-lg mt-5 opacity-0 animate-fadeIn delay-1500">
-          <span className="text-white text-2xl font-bold">21st-23rd</span>
-          <span className="text-[#2BB8FF] text-2xl font-bold">March</span>
-        </p>
-        <p className="mt-12 text-white text-5xl font-bold font-poppins capitalize animate-fadeIn">
+
+        {/* Date Component (Now placed directly below E-Summit Text) */}
+        <div className="flex flex-col items-center text-center my-4">
+          <span className="text-white text-3xl font-bold capitalize">21st-23rd</span>
+          <span className="text-sky-400 text-3xl font-bold capitalize">March</span>
+        </div>
+
+        {/* Tagline */}
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-wide">
           WHERE CREATIVITY MEETS CAPITAL
-        </p>
+        </h2>
       </div>
     </div>
   );
