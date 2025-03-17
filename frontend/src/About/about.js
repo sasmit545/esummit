@@ -163,59 +163,23 @@ const About = () => {
           </div>
         </div>
         {/* Socials Section */}
-        <div className="md:absolute md:right-[6rem] md:bottom-[17rem] flex flex-col gap-6 mt-10 md:mt-0 items-center md:items-start text-center">
-          <h2 className="text-2xl font-bold">SOCIALS</h2>
-          <div className="flex gap-8 md:justify-start justify-center">
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group"
-            >
-              <img
-                src="instagram.png"
-                alt="Instagram"
-                className="w-8 h-8 transition-transform duration-300 transform group-hover:scale-110"
-              />
-            </a>
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group"
-            >
-              <img
-                src="twitter.png"
-                alt="Twitter"
-                className="w-8 h-8 transition-transform duration-300 transform group-hover:scale-110"
-              />
-            </a>
-            <a
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group"
-            >
-              <img
-                src="facebook.png"
-                alt="Facebook"
-                className="w-8 h-8 transition-transform duration-300 transform group-hover:scale-110"
-              />
-            </a>
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group"
-            >
-              <img
-                src="linkedin.png"
-                alt="LinkedIn"
-                className="w-8 h-8 transition-transform duration-300 transform group-hover:scale-110"
-              />
-            </a>
-          </div>
-        </div>
+        <div class="md:absolute md:right-[6rem] md:bottom-[17rem] flex flex-col gap-6 mt-10 md:mt-0 items-center md:items-start text-center">
+  <h2 class="text-2xl font-bold text-center">SOCIALS</h2> 
+  <div class="flex gap-8 md:justify-start justify-center">
+    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="group">
+      <img alt="Instagram" class="w-8 h-8 transition-transform duration-300 transform group-hover:scale-110" src="instagram.png" />
+    </a>
+    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" class="group">
+      <img alt="Twitter" class="w-8 h-8 transition-transform duration-300 transform group-hover:scale-110" src="twitter.png"/>
+    </a>
+    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="group">
+      <img alt="Facebook" class="w-8 h-8 transition-transform duration-300 transform group-hover:scale-110" src="facebook.png"/>
+    </a>
+    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="group">
+      <img alt="LinkedIn" class="w-8 h-8 transition-transform duration-300 transform group-hover:scale-110" src="linkedin.png"/>
+    </a>
+  </div>
+</div>
 
         <img
           src="blue_shapes.png"

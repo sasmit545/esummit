@@ -14,10 +14,10 @@ const Navbar = () => {
 
   return (
 <>
-<nav className="flex justify-between items-center px-8 py-4 text-white" 
-     style={{ position: "fixed", width: "100%", backgroundColor: "rgba(26, 27, 36, 0.5)", zIndex: 50 }}>      {/* Logo */}
+<nav className="flex justify-between items-center px-9 py-3 text-white" 
+     style={{ position: "fixed", width: "100%", backgroundColor: "rgba(26, 27, 36, 0.9)", zIndex: 50 }}>      {/* Logo */}
       <Link to="/" className="flex items-center">
-        <img src="/logo.png" alt="Logo" className="h-10 mr-4" />
+        <img src="/logo.png" alt="Logo" className="h-14 mr-4" />
       </Link>
 
       {/* Navbar Links */}
@@ -37,7 +37,7 @@ const Navbar = () => {
 
       {/* Mobile Navbar */}
       {isOpen && (
-        <ul className="absolute top-16 left-0 w-full bg-[#1e1e1e] flex flex-col items-center py-6 gap-6 z-50 animate-slideDown"  style={{ position: "fixed", width: "100%", backgroundColor: "rgba(26, 27, 36, 0.5)", zIndex: 50 }}>
+        <ul className="absolute top-16 left-0 w-full bg-[#1e1e1e] flex flex-col items-center py-16 gap-6 z-50 animate-slideDown"  style={{ position: "fixed", width: "100%", backgroundColor: "rgba(26, 27, 36, 0.9)", zIndex: 50,marginTop:"12" }}>
           <li><Link to="/" className="hover:text-[#00aaff]" onClick={closeNavbar}>Home</Link></li>
           <li><Link to="/events" className="hover:text-[#00aaff]" onClick={closeNavbar}>Events</Link></li>
           <li><Link to="/speakers" className="hover:text-[#00aaff]" onClick={closeNavbar}>Speakers</Link></li>
