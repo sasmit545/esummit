@@ -16,7 +16,7 @@ const InvestorsPage = () => {
             Our Esteemed Investors
           </h1>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Partnering with visionary investors who share our commitment to fostering innovation and entrepreneurship
+            <i>Partnering with visionary investors who share our commitment to fostering innovation and entrepreneurship</i>
           </p>
         </div>
 

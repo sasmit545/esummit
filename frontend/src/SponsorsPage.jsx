@@ -18,7 +18,7 @@ const SponsorsPage = () => {
             Our Valued Sponsors
           </h1>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Partnering with industry leaders who empower our vision of fostering entrepreneurship and innovation
+            <i>Partnering with industry leaders who empower our vision of fostering entrepreneurship and innovation</i>
           </p>
         </div>
 
