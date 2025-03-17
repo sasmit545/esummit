@@ -1,5 +1,5 @@
 import React from "react";
-import quize1 from "./pitch.jpg";
+import quize1 from "./pitch.png";
 import quize2 from "./bizz.png";
 import quize3 from "./expo.png";
 import quize4 from "./exeutive.jpg";
