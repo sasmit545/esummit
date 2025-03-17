@@ -1,5 +1,5 @@
 import React from "react";
-import Countdown from "../TimeLeft";
+import Countdown from "./TimeLeft";
 import SocialFeed from "./SocialFeed";
 import InvestorsPage from "./InvestorsPage";
 import SponsorsPage from "./SponsorsPage";
@@ -47,9 +47,15 @@ const ESummitPage = () => {
         </h2>
       </div>
       <Countdown/>
-      <SocialFeed/>
-      <InvestorsPage />
-      <SponsorsPage />
+      <div className="w-full my-16">
+        <SocialFeed/>
+      </div>
+      <div className="w-full my-16">
+        <InvestorsPage />
+      </div>
+      <div className="w-full my-16">
+        <SponsorsPage />
+      </div>
     </div>
 
     <About/>
