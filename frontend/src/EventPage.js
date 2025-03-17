@@ -7,6 +7,10 @@ import Events from "./Event/Events";
 function EventPage() {
   return (
     <div>
+      <div
+        className="fixed inset-0 bg-no-repeat bg-cover bg-center z-[-1]"
+        style={{ backgroundImage: "url('background.png')" }}
+      ></div>
       <Event />
       <Event2 />
       <Event3 />
