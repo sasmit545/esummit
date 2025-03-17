@@ -1,5 +1,5 @@
 import React from "react";
-import quize from "./pitch.jpg";
+import quize from "./pitch.png";
 
 const Event = () => {
   return (
