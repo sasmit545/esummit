@@ -109,7 +109,7 @@ const SpeakerCard = ({ speaker, index }) => {
               {speaker.topics.map((topic, i) => (
                 <span
                   key={i}
-                  className="bg-gray-800 text-gray-200 px-3 py-1 rounded-full text-xs sm:text-sm"
+                  className="bg-blue-900 text-gray-200 px-3 py-1 rounded-full text-xs sm:text-sm"
                 >
                   {topic}
                 </span>
