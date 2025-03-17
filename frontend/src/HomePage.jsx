@@ -1,9 +1,8 @@
 import React from "react";
-import { motion } from "framer-motion";
-import Countdown from "./TimeLeft";
-import InvestorsPage from "./InvestorsPage";
-import SponsorsPage from "./SponsorsPage";
 import About from "./About/about";
+import InvestorsPage from './InvestorsPage';
+import SponsorsPage from './SponsorsPage';
+import Countdown from './TimeLeft'
 
 const ESummitPage = () => {
   return (
@@ -17,12 +16,10 @@ const ESummitPage = () => {
           <div className="relative flex flex-col items-center mb-4">
           {/* Bulb Image behind the E-Summit Logo */}
           <motion.img
-  src="/bulb.svg"
-  alt="Bulb"
-  className="absolute top-[45%] left-[47%] w-[40%] max-w-[350px] h-auto transform -translate-x-[47%] -translate-y-1/2 mix-blend-overlay opacity-40 z-0"
-/>
-
-
+            src="/bulb.svg"
+            alt="Bulb"
+            className="absolute top-[45%] left-[47%] w-[40%] max-w-[350px] h-auto transform -translate-x-[47%] -translate-y-1/2 mix-blend-overlay opacity-40 z-0"
+          />
 
           <img
             src="/es2.svg"
