@@ -3,7 +3,7 @@ import quize from "./pitch.png";
 
 const Event = () => {
   return (
-    <div className="bg-white min-h-screen flex justify-center items-center px-6 py-10 relative overflow-auto">
+    <div className=" min-h-screen flex justify-center items-center px-6 py-10 relative overflow-auto">
       {/* Background geometric shapes */}
       <div className="absolute top-0 left-0 w-full h-full -z-10">
         <div className="absolute top-0 left-0 w-24 h-24 bg-blue-600 clip-triangle rotate-45"></div>
@@ -15,8 +15,8 @@ const Event = () => {
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Left Section - Text Content */}
         <div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">PITCH IT UP</h1>
-          <p className="text-gray-700 text-lg leading-relaxed">
+          <h1 className="text-4xl font-bold text-white mb-4">PITCH IT UP</h1>
+          <p className="text-white text-lg leading-relaxed">
             <span className="font-semibold text-blue-600">
               "Pitch It Up" is a high-energy entrepreneurial competition
             </span>{" "}
@@ -25,7 +25,7 @@ const Event = () => {
             executive summaries, with top entries advancing to the hybrid second
             round.
           </p>
-          <p className="text-gray-700 text-lg leading-relaxed mt-3">
+          <p className="text-white text-lg leading-relaxed mt-3">
             Here, they present their visions to a panel of judges, either{" "}
             <span className="font-semibold text-blue-600">
               in-person at IIT Patna or virtually

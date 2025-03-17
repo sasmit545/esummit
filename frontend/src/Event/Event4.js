@@ -3,7 +3,7 @@ import exu from "./exeutive.jpg";
 
 const Event4 = () => {
   return (
-    <div className="bg-white min-h-screen flex justify-center items-center px-6 py-10 relative overflow-auto">
+    <div className="min-h-screen flex justify-center items-center px-6 py-10 relative overflow-auto">
       {/* Background geometric shapes */}
       <div className="absolute top-0 left-0 w-full h-full -z-10">
         <div className="absolute top-0 left-0 w-24 h-24 bg-green-600 clip-triangle rotate-45"></div>
@@ -24,10 +24,10 @@ const Event4 = () => {
 
         {/* Left Section - Text Content */}
         <div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-white mb-4">
             EXECUTIVE DESK
           </h1>
-          <p className="text-gray-700 text-lg leading-relaxed">
+          <p className="text-white text-lg leading-relaxed">
             <span className="font-semibold text-green-600">
               Build Your Dream Team — Bid for the C-Suite!
             </span>{" "}
@@ -36,11 +36,11 @@ const Event4 = () => {
             — featuring executives from world-renowned companies! Assemble your
             dream leadership squad, unlock insights, and compete for glory.
           </p>
-          <p className="text-gray-700 text-lg leading-relaxed mt-3">
+          <p className="text-white text-lg leading-relaxed mt-3">
             Prizes worth ₹30,000 await the best strategists! Don’t miss this
             chance to lead, strategize, and win!
           </p>
-          <p className="text-gray-700 text-lg leading-relaxed mt-3">
+          <p className="text-white text-lg leading-relaxed mt-3">
             <strong>Date:</strong> 23rd March <br />
             <strong>Venue:</strong> CLH LT002 <br />
             <strong>Time:</strong> TBD <br />
