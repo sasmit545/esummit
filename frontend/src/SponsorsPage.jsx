@@ -41,33 +41,36 @@ const SponsorsPage = () => {
         </div>
 
         {/* Sponsors Grid */}
-        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-12 justify-center">
-  {sponsors.map((sponsor, index) => (
-    <a
-      key={sponsor.name}
-      href={sponsor.website}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block h-36 w-full transition-all duration-300 rounded-xl backdrop-blur-sm 
-                 hover:bg-white/10 hover:shadow-lg hover:ring-2 hover:ring-blue-500/50"
-    >
-      <motion.div
-        initial={{ opacity: 0.3, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
-        className="flex items-center justify-center h-full w-full p-6 justify-self-center"
-      >
-        <img
-          src={`/Sponsors/${sponsor.name}.svg`}
-          alt={`${sponsor.name} logo`}
-          className="max-h-24 w-auto object-contain filter brightness-100 hover:brightness-110 transition-all duration-300"
-          loading="lazy"
-        />
-      </motion.div>
-    </a>
-  ))}
-</div>
+        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-12">
+          {sponsors.map((sponsor, index) => (
+            <a
+              key={sponsor.name}
+              href={sponsor.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block h-36 w-full transition-all duration-300 rounded-xl backdrop-blur-sm 
+                         hover:bg-white/10 hover:shadow-lg hover:ring-2 hover:ring-blue-500/50 relative"
+            >
+              {/* Square Shape */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl z-0"></div>
 
+              {/* Sponsor Logo */}
+              <motion.div
+                initial={{ opacity: 0.3, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex items-center justify-center h-full w-full p-6 relative z-10"
+              >
+                <img
+                  src={`/Sponsors/${sponsor.name}.svg`}
+                  alt={`${sponsor.name} logo`}
+                  className="max-h-24 w-auto object-contain filter brightness-100 hover:brightness-110 transition-all duration-300"
+                  loading="lazy"
+                />
+              </motion.div>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );

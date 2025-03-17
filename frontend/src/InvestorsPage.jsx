@@ -15,7 +15,7 @@ const InvestorsPage = () => {
     { name: "KWCG", website: "https://www.kwcg.com/" },
     { name: "Scope", website: "https://www.scope.com/" },
     { name: "AlphaValue", website: "https://www.alphavalue.com/" },
-    { name: "KolkataVentures", website: "https://kolkataventures.com/" }
+    { name: "KolkataVentures", website: "https://kolkataventures.com/" },
   ]);
 
   return (
@@ -27,7 +27,10 @@ const InvestorsPage = () => {
             Our Esteemed Investors
           </h1>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            <i>Partnering with visionary investors who share our commitment to fostering innovation and entrepreneurship.</i>
+            <i>
+              Partnering with visionary investors who share our commitment to
+              fostering innovation and entrepreneurship.
+            </i>
           </p>
         </div>
 
@@ -35,28 +38,31 @@ const InvestorsPage = () => {
         <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-12">
           {investors.map((investor, index) => (
             <a
-            key={investor.name}
-            href={investor.website}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block h-36 w-full transition-all duration-300 rounded-xl backdrop-blur-sm 
-                       hover:bg-white/10 hover:shadow-lg hover:ring-2 hover:ring-blue-500/50"
-          >
-            <motion.div
-              initial={{ opacity: 0.3, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex items-center justify-center h-full w-full p-6"
+              key={investor.name}
+              href={investor.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block h-36 w-full transition-all duration-300 rounded-xl backdrop-blur-sm 
+                         hover:bg-white/10 hover:shadow-lg hover:ring-2 hover:ring-blue-500/50 relative"
             >
-              <img
-                src={`/investors/${investor.name}.svg`}
-                alt={`${investor.name} logo`}
-                className="max-h-24 w-auto object-contain filter brightness-100 hover:brightness-110 transition-all duration-300"
-                loading="lazy"
-              />
-            </motion.div>
-          </a>
-          
+              {/* Square Shape */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl z-0"></div>
+
+              {/* Investor Logo */}
+              <motion.div
+                initial={{ opacity: 0.3, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex items-center justify-center h-full w-full p-6 relative z-10"
+              >
+                <img
+                  src={`/investors/${investor.name}.svg`}
+                  alt={`${investor.name} logo`}
+                  className="max-h-24 w-auto object-contain filter brightness-100 hover:brightness-110 transition-all duration-300"
+                  loading="lazy"
+                />
+              </motion.div>
+            </a>
           ))}
         </div>
       </div>
