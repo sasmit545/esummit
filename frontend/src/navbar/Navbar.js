@@ -1,42 +1,27 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import SocialSidebar from "./sideNav";
+import { motion } from "framer-motion";
+import { X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation(); // Get the current route
+  const location = useLocation();
 
-  const toggleNavbar = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeNavbar = () => {
-    setIsOpen(false);
-  };
-
-  // Function to check if a link is active
+  const toggleNavbar = () => setIsOpen(!isOpen);
+  const closeNavbar = () => setIsOpen(false);
   const isActive = (path) => location.pathname === path;
 
   return (
     <>
       <nav
-        className="flex justify-between items-center px-9 py-3 text-white"
-        style={{
-          position: "fixed",
-          width: "100%",
-          backgroundColor: "rgba(26, 27, 36, 0.9)",
-          zIndex: 50,
-        }}
+        className="flex justify-between items-center px-9 py-3 text-white fixed w-full bg-[rgba(26,27,36,0.9)] z-50"
       >
-        {/* Logo */}
         <Link to="/" className="flex items-center">
           <img src="/logo.png" alt="Logo" className="h-14 mr-4" />
         </Link>
 
-        {/* Navbar Links */}
-        <ul className={`md:flex gap-10 hidden text-[20px]`}>
+        <ul className="md:flex gap-10 hidden text-[20px]">
           {["/", "/events", "/speakers", "/team"].map((path, index) => (
             <li key={index}>
               <Link
@@ -45,117 +30,47 @@ const Navbar = () => {
                   isActive(path) ? "text-[#00aaff] font-bold" : ""
                 } hover:shadow-[0_3px_0_#00aaff]`}
                 onClick={closeNavbar}
-                style={{ wordWrap: "break-word", overflowWrap: "break-word" }}
               >
-                {path === "/"
-                  ? "Home"
-                  : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
+                {path === "/" ? "Home" : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
               </Link>
             </li>
           ))}
         </ul>
 
-        {/* Hamburger Icon */}
-        <div
-          className="md:hidden flex flex-col gap-1 cursor-pointer"
-          onClick={toggleNavbar}
-        >
+        <div className="md:hidden flex flex-col gap-1 cursor-pointer" onClick={toggleNavbar}>
           <span className="w-6 h-[3px] bg-white"></span>
           <span className="w-6 h-[3px] bg-white"></span>
           <span className="w-6 h-[3px] bg-white"></span>
         </div>
-
-        {/* Mobile Navbar */}
-        {isOpen && (
-          <ul
-            className="absolute top-16 left-0 w-full bg-[#1e1e1e] flex flex-col items-center 
-    py-6 gap-2 z-50 animate-slideDown"
-            style={{
-              position: "fixed",
-              width: "100%",
-              backgroundColor: "rgba(26, 27, 36, 0.9)",
-              zIndex: 50,
-            }}
-          >
-            {["/", "/events", "/speakers", "/team"].map((path, index) => (
-              <li key={index} className="w-full text-center">
-                <Link
-                  to={path}
-                  className={`text-[18px] transition-all pb-2 w-full inline-block 
-            ${isActive(path) ? "text-[#00aaff] font-bold" : "text-white"} 
-            hover:border-b-2 border-[#00aaff]`} // 🔥 Bottom Border Effect
-                  onClick={closeNavbar}
-                >
-                  {path === "/"
-                    ? "Home"
-                    : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
       </nav>
 
-      <div
-        style={{
-          width: "100%",
-          height: "75px",
-          position: "relative",
-          backgroundImage: "url('background.png')",
-        }}
-      ></div>
-      {/* <div
-        className="fixed left-0 md:left-1  top-1/2 transform -translate-y-1/2 flex flex-col gap-3 z-50  bg-opacity-30 md:bg-opacity-50  
- p-2 md:p-3 rounded-lg"
-      >
-        <a
-          href="https://www.instagram.com/ecell_iitpatna/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group"
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="fixed inset-0 bg-black/30 backdrop-blur-md flex flex-col items-center justify-center gap-4 z-50"
         >
-          <img
-            alt="Instagram"
-            className="w-8 h-8 md:w-7 md:h-7 transition-transform duration-300 transform group-hover:scale-110"
-            src="instagram.png"
-          />
-        </a>
-        <a
-          href="https://x.com/ecelliitp/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group flex justify-center"
-        >
-          <FontAwesomeIcon
-            icon={faXTwitter}
-            className="text-white text-2xl md:text-xl transition-transform duration-300 transform hover:scale-110"
-          />
-        </a>
-        <a
-          href="https://www.facebook.com/ecelliitp/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group"
-        >
-          <img
-            alt="Facebook"
-            className="w-8 h-8 md:w-7 md:h-7 transition-transform duration-300 transform group-hover:scale-110"
-            src="facebook.png"
-          />
-        </a>
-        <a
-          href="https://www.linkedin.com/company/ecell-iit-patna/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group"
-        >
-          <img
-            alt="LinkedIn"
-            className="w-8 h-8 md:w-7 md:h-7 transition-transform duration-300 transform group-hover:scale-110"
-            src="linkedin.png"
-          />
-        </a>
-      </div> */}
+          <button onClick={closeNavbar} className="absolute top-6 right-6">
+            <X size={32} className="text-white" />
+          </button>
+
+          {["/", "/events", "/speakers", "/team"].map((path, index) => (
+            <Link
+              key={index}
+              to={path}
+              onClick={closeNavbar}
+              className={`text-2xl font-semibold transition-all px-4 py-2 rounded-md ${
+                isActive(path) ? "text-[#00aaff] font-bold" : "text-white hover:text-[#00aaff]"
+              }`}
+            >
+              {path === "/" ? "Home" : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
+            </Link>
+          ))}
+        </motion.div>
+      )}
+
+      <div className="w-full h-[75px] relative bg-cover" style={{ backgroundImage: "url('background.png')" }}></div>
       <SocialSidebar />
     </>
   );

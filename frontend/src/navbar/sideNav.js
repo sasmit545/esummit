@@ -1,23 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 const SocialSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  let timeoutId;
+  const timeoutRef = useRef(null); // 🔥 useRef for timeout ID
 
-  // Auto-hide after 5 sec
   useEffect(() => {
     if (isOpen) {
-      timeoutId = setTimeout(() => setIsOpen(false), 5000);
+      timeoutRef.current = setTimeout(() => setIsOpen(false), 5000);
     }
-    return () => clearTimeout(timeoutId);
+    return () => clearTimeout(timeoutRef.current);
   }, [isOpen]);
 
   return (
     <div className="fixed left-0 top-1/2 transform -translate-y-1/2 flex flex-col z-50">
-      {/* 🔥 Stylish Animated Button */}
+      {/* 🔥 Toggle Button */}
       <button
         className={`border border-gray-500 backdrop-blur-lg bg-white/20 w-10 h-10 flex items-center justify-center rounded-md shadow-lg hover:scale-110 transition-all duration-300 ${
           isOpen ? "rotate-180" : ""
@@ -27,7 +26,7 @@ const SocialSidebar = () => {
         <FontAwesomeIcon icon={isOpen ? faChevronLeft : faChevronRight} className="text-white text-lg" />
       </button>
 
-      {/* 🚀 Social Icons (Animated) */}
+      {/* 🚀 Social Icons */}
       <div
         className={`flex flex-col gap-3 bg-black/40 backdrop-blur-md p-3 rounded-lg transition-all duration-500 ease-in-out ${
           isOpen ? "opacity-100 scale-100 translate-x-0" : "opacity-0 scale-90 -translate-x-5 pointer-events-none"

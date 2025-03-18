@@ -4,7 +4,7 @@ import Loader from "../loader/loader";
 const speakers = [
   {
     name: "Amit Lodha",
-    designation: "IG of Police, IPS Officer",
+    designation: "ADGP of Police, IPS Officer",
     image: "/main/amit.jpg",
     bio: "Amit Lodha is an IIT graduate and an Additional Director General of Police (ADGP) known for his work in Bihar. He has been involved in several high-profile cases and has written books like 'Bihar Diaries' and 'Life in the Uniform.' He is the inspiration behind the Netflix series 'Khakee: The Bihar Chapter.",
     topics: ["Law Enforcement", "Leadership", "Civic Governance"],

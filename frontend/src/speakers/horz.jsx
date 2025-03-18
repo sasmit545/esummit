@@ -4,7 +4,7 @@ import { FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 const speakers = [
   {
     name: "Amit Lodha",
-    designation: "IG of Police, IPS Officer",
+    designation: "Additional Director General of Police (ADGP), IPS Officer",
     image: "/main/amit.jpg",
     bio: "Amit Lodha is an IIT graduate and IPS officer known for his work in Bihar...",
     socials: {

@@ -6,15 +6,15 @@ import Loader from "../loader/loader";
 
 const Team = () => {
     const [loading, setLoading] = useState(true);
-    const [teamData, setTeamData] = useState([]);
+    // const [teamData, setTeamData] = useState([]);
 
     useEffect(() => {
         setTimeout(() => {
-            setTeamData(head_data);
+            // setTeamData(head_data);
             setLoading(false);
         }, 1000); // Simulating data fetch delay
     }, []);
-
+        
 
     const head_data = [
         {
