@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import SocialSidebar from "./sideNav";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,24 +68,23 @@ const Navbar = () => {
         {/* Mobile Navbar */}
         {isOpen && (
           <ul
-            className="absolute top-16 left-0 w-full bg-[#1e1e1e] flex flex-col items-center py-16 gap-6 z-50 animate-slideDown"
+            className="absolute top-16 left-0 w-full bg-[#1e1e1e] flex flex-col items-center 
+    py-6 gap-2 z-50 animate-slideDown"
             style={{
               position: "fixed",
               width: "100%",
               backgroundColor: "rgba(26, 27, 36, 0.9)",
               zIndex: 50,
-              marginTop: "12",
             }}
           >
             {["/", "/events", "/speakers", "/team"].map((path, index) => (
-              <li key={index}>
+              <li key={index} className="w-full text-center">
                 <Link
                   to={path}
-                  className={`text-[20px] hover:shadow-[0_3px_0_#00aaff] ${
-                    isActive(path) ? "text-[#00aaff] font-bold" : ""
-                  }`}
+                  className={`text-[18px] transition-all pb-2 w-full inline-block 
+            ${isActive(path) ? "text-[#00aaff] font-bold" : "text-white"} 
+            hover:border-b-2 border-[#00aaff]`} // 🔥 Bottom Border Effect
                   onClick={closeNavbar}
-                  style={{ wordWrap: "break-word", overflowWrap: "break-word" }}
                 >
                   {path === "/"
                     ? "Home"
@@ -104,21 +104,59 @@ const Navbar = () => {
           backgroundImage: "url('background.png')",
         }}
       ></div>
-      <div className="fixed left-0 md:left-1  top-1/2 transform -translate-y-1/2 flex flex-col gap-3 z-50 bg-opacity-50 p-2 md:p-3 rounded-lg">
-  <a href="https://www.instagram.com/ecell_iitpatna/" target="_blank" rel="noopener noreferrer" className="group">
-    <img alt="Instagram" className="w-8 h-8 md:w-7 md:h-7 transition-transform duration-300 transform group-hover:scale-110" src="instagram.png" />
-  </a>
-  <a href="https://x.com/ecelliitp/" target="_blank" rel="noopener noreferrer" className="group flex justify-center">
-    <FontAwesomeIcon icon={faXTwitter} className="text-white text-2xl md:text-xl transition-transform duration-300 transform hover:scale-110" />
-  </a>
-  <a href="https://www.facebook.com/ecelliitp/" target="_blank" rel="noopener noreferrer" className="group">
-    <img alt="Facebook" className="w-8 h-8 md:w-7 md:h-7 transition-transform duration-300 transform group-hover:scale-110" src="facebook.png" />
-  </a>
-  <a href="https://www.linkedin.com/company/ecell-iit-patna/" target="_blank" rel="noopener noreferrer" className="group">
-    <img alt="LinkedIn" className="w-8 h-8 md:w-7 md:h-7 transition-transform duration-300 transform group-hover:scale-110" src="linkedin.png" />
-  </a>
-</div>
-
+      {/* <div
+        className="fixed left-0 md:left-1  top-1/2 transform -translate-y-1/2 flex flex-col gap-3 z-50  bg-opacity-30 md:bg-opacity-50  
+ p-2 md:p-3 rounded-lg"
+      >
+        <a
+          href="https://www.instagram.com/ecell_iitpatna/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group"
+        >
+          <img
+            alt="Instagram"
+            className="w-8 h-8 md:w-7 md:h-7 transition-transform duration-300 transform group-hover:scale-110"
+            src="instagram.png"
+          />
+        </a>
+        <a
+          href="https://x.com/ecelliitp/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex justify-center"
+        >
+          <FontAwesomeIcon
+            icon={faXTwitter}
+            className="text-white text-2xl md:text-xl transition-transform duration-300 transform hover:scale-110"
+          />
+        </a>
+        <a
+          href="https://www.facebook.com/ecelliitp/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group"
+        >
+          <img
+            alt="Facebook"
+            className="w-8 h-8 md:w-7 md:h-7 transition-transform duration-300 transform group-hover:scale-110"
+            src="facebook.png"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/company/ecell-iit-patna/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group"
+        >
+          <img
+            alt="LinkedIn"
+            className="w-8 h-8 md:w-7 md:h-7 transition-transform duration-300 transform group-hover:scale-110"
+            src="linkedin.png"
+          />
+        </a>
+      </div> */}
+      <SocialSidebar />
     </>
   );
 };
