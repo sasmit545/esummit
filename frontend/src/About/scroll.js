@@ -1,14 +1,33 @@
 import React, { useRef } from "react";
 
 const ImageScroll = () => {
-  const images = [
-    "/scroll/scrollimage1.png",
-    "/scroll/scrollimage2.png",
-    "/scroll/scrollimage3.png",
-    "/scroll/scrollimage4.png",
-    "/scroll/scrollimage5.png",
-    "/scroll/scrollimage6.png",
-  ];
+    const images = [
+        "/scroll/tanu_jain.png",
+        "/scroll/suresh.png",
+        "/scroll/seju.png",
+        "/scroll/saurabh.png",
+        "/scroll/sashi bhushan.png",
+        "/scroll/sarada.png",
+        "/scroll/rohitkumar_oza.png",
+        "/scroll/rishabh.png",
+        "/scroll/praveer.png",
+        "/scroll/neeraj.png",
+        "/scroll/maneesh.png",
+        "/scroll/kr._bhagat.png",
+        "/scroll/khalid.png",
+        "/scroll/johari.png",
+        "/scroll/deputy_cm.png",
+        "/scroll/creators_economy.png",
+        "/scroll/closing_ceremony.png",
+        "/scroll/chamaria.png",
+        "/scroll/appalla.png",
+        "/scroll/anant_kumar.png",
+        "/scroll/akanksha.png",
+        "/scroll/agarwal.png",
+        "/scroll/abhishek.png"
+    ];
+    
+    
 
   const scrollRef = useRef(null); // ✅ Scroll reference
 
