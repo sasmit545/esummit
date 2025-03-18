@@ -126,34 +126,38 @@ const SpeakerCard = ({ speaker, index }) => {
 
 const SpeakersPage = () => {
   const [loading, setLoading] = useState(true);
-  
+
   useEffect(() => {
     setTimeout(() => {
-      
+
       setLoading(false);
     }, 1000); // Simulating data fetch delay
   }, []);
   return (
-    
+
 
 
     <div className="min-h-screen text-white p-6 sm:p-10">
-      <header className="text-center mb-8 sm:mb-12">
-        <h1 className="text-4xl sm:text-5xl font-bold">E-Summit Speakers</h1>
-        <p className="text-base sm:text-lg text-gray-400 mt-2">
-          Scroll down to explore the visionary minds behind the E-Summit.
-        </p>
-      </header>
+
       {loading ? (
-        <div className="flex justify-center items-center h-60">
+        
           <Loader />
-        </div>
+     
       ) : (
-        <ul className="list-none grid gap-8 sm:gap-10 pb-20 sm:pb-40">
-          {speakers.map((speaker, index) => (
-            <SpeakerCard key={index} speaker={speaker} index={index} />
-          ))}
-        </ul>
+        <>
+          <header className="text-center mb-8 sm:mb-12">
+            <h1 className="text-4xl sm:text-5xl font-bold">E-Summit Speakers</h1>
+            <p className="text-base sm:text-lg text-gray-400 mt-2">
+              Scroll down to explore the visionary minds behind the E-Summit.
+            </p>
+          </header>
+          <ul className="list-none grid gap-8 sm:gap-10 pb-20 sm:pb-40">
+            {speakers.map((speaker, index) => (
+              <SpeakerCard key={index} speaker={speaker} index={index} />
+            ))}
+          </ul>
+        </>
+
       )}
     </div>
 
