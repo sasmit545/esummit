@@ -118,7 +118,7 @@ const Team = () => {
                 <Loader /> :
                 <section>
                     <div className="container px-6 py-10 mx-auto">
-                        <h1 className="text-3xl font-semibold text-center text-white">
+                        <h1 className="text-5xl font-bold text-center text-white">
                             Meet Our Team
                         </h1>
 
