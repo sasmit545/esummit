@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -95,6 +97,21 @@ const Navbar = () => {
           backgroundImage: "url('background.png')",
         }}
       ></div>
+      <div className="fixed left-2 md:right-6 top-1/2 transform -translate-y-1/2 flex flex-col gap-4 z-50">
+  <a href="https://www.instagram.com/ecell_iitpatna/" target="_blank" rel="noopener noreferrer" className="group">
+    <img alt="Instagram" className="w-10 h-10 md:w-8 md:h-8 transition-transform duration-300 transform group-hover:scale-110" src="instagram.png" />
+  </a>
+  <a href="https://x.com/ecelliitp/" target="_blank" rel="noopener noreferrer" className="group">
+  <FontAwesomeIcon icon={faXTwitter} className="text-white text-2xl md:text-3xl transition-transform duration-300 transform hover:scale-125" />
+</a>
+  <a href="https://www.facebook.com/ecelliitp/" target="_blank" rel="noopener noreferrer" className="group">
+    <img alt="Facebook" className="w-10 h-10 md:w-8 md:h-8 transition-transform duration-300 transform group-hover:scale-110" src="facebook.png"/>
+  </a>
+  <a href="https://www.linkedin.com/company/ecell-iit-patna/" target="_blank" rel="noopener noreferrer" className="group">
+    <img alt="LinkedIn" className="w-10 h-10 md:w-8 md:h-8 transition-transform duration-300 transform group-hover:scale-110" src="linkedin.png"/>
+  </a>
+</div>
+
     </>
   );
 };
