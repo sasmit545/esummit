@@ -103,8 +103,8 @@ const Team = () => {
                     role: "Head",
                     image: "/team/rudra.jpg",
                     socials: {
-                        linkedin: "https://www.linkedin.com/in/aditya-bajar-495028256",
-                        instagram: "https://www.instagram.com/adityabajar27",
+                        linkedin: "https://in.linkedin.com/in/rudra-goyal-b6036a285",
+                        instagram: "https://www.instagram.com/solo.rudra?igsh=Z21wenl6NzAzbWJz",
                     },
                 },
             ],
