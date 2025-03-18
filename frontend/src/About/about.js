@@ -2,6 +2,7 @@ import React from "react";
 // import { FaInstagram, FaTwitter, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import Events from "../Event/Events";
 import "./about.css";
+// import ImageScroll from "./scroll";
 const About = () => {
   return (
     <>
@@ -126,7 +127,6 @@ const About = () => {
 
         <Events />
       </div>
-
       {/* Important Contacts Section */}
       
     </>
