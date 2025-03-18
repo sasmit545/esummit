@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
-
+import Loader from "../loader/loader";
 const speakers = [
   {
     name: "Amit Lodha",
     designation: "IG of Police, IPS Officer",
     image: "/main/amit.jpg",
-    bio: "Amit Lodha is an IIT graduate and IPS officer known for his work in Bihar. He has been involved in several high-profile cases and has written books like 'Bihar Diaries' and 'Life in the Uniform.' He is the inspiration behind the Netflix series 'Khakee: The Bihar Chapter.'",
+    bio: "Amit Lodha is an IIT graduate and an Additional Director General of Police (ADGP) known for his work in Bihar. He has been involved in several high-profile cases and has written books like 'Bihar Diaries' and 'Life in the Uniform.' He is the inspiration behind the Netflix series 'Khakee: The Bihar Chapter.",
     topics: ["Law Enforcement", "Leadership", "Civic Governance"],
     socials: {
       linkedin: "https://www.linkedin.com/in/amit-lodha-07452776/",
@@ -42,6 +42,8 @@ const speakers = [
 ];
 
 const SpeakerCard = ({ speaker, index }) => {
+
+
   return (
     <li
       className="sticky top-0 pt-[calc(var(--index)*2em)] transition-all duration-300"
@@ -123,7 +125,18 @@ const SpeakerCard = ({ speaker, index }) => {
 };
 
 const SpeakersPage = () => {
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    setTimeout(() => {
+      
+      setLoading(false);
+    }, 1000); // Simulating data fetch delay
+  }, []);
   return (
+    
+
+
     <div className="min-h-screen text-white p-6 sm:p-10">
       <header className="text-center mb-8 sm:mb-12">
         <h1 className="text-4xl sm:text-5xl font-bold">E-Summit Speakers</h1>
@@ -131,12 +144,21 @@ const SpeakersPage = () => {
           Scroll down to explore the visionary minds behind the E-Summit.
         </p>
       </header>
-      <ul className="list-none grid gap-8 sm:gap-10 pb-20 sm:pb-40">
-        {speakers.map((speaker, index) => (
-          <SpeakerCard key={index} speaker={speaker} index={index} />
-        ))}
-      </ul>
+      {loading ? (
+        <div className="flex justify-center items-center h-60">
+          <Loader />
+        </div>
+      ) : (
+        <ul className="list-none grid gap-8 sm:gap-10 pb-20 sm:pb-40">
+          {speakers.map((speaker, index) => (
+            <SpeakerCard key={index} speaker={speaker} index={index} />
+          ))}
+        </ul>
+      )}
     </div>
+
+
+
   );
 };
 
