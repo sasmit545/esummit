@@ -25,7 +25,8 @@ const SponsorsPage = () => {
   ]);
 
   return (
-    <div className="min-h-screen w-full py-16 px-4 sm:px-6 lg:px-8">
+    <>
+    <div className="min-h-screen w-full px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-7xl mx-auto">
         {/* Title Section */}
         <div className="text-center mb-16">
@@ -73,6 +74,30 @@ const SponsorsPage = () => {
         </div>
       </div>
     </div>
+    <div className="w-full py-16 px-4 sm:px-6 lg:px-8">
+  <div className="max-w-7xl mx-auto text-center">
+    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+      Find Us Here
+    </h2>
+    <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+      Visit us at our location and connect with us in person.
+    </p>
+
+    <div className="w-full flex justify-center">
+      <div className="w-full max-w-4xl overflow-hidden rounded-lg shadow-lg">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.081871945707!2d84.84872167392275!3d25.535649617911687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed577f6954a4ab%3A0x6ce8f1b9fc2aa02a!2sIndian%20Institute%20of%20Technology%2C%20Patna!5e0!3m2!1sen!2sin!4v1742280078092!5m2!1sen!2sin"
+          className="w-full h-[300px] sm:h-[400px] md:h-[450px] border-0"
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </>
   );
 };
 
