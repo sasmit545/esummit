@@ -14,8 +14,6 @@ const Team = () => {
             setLoading(false);
         }, 1000); // Simulating data fetch delay
     }, []);
-        
-
     const head_data = [
         {
             role: "Overall Coordinators",
@@ -95,6 +93,15 @@ const Team = () => {
                     name: "Aditya",
                     role: "Head",
                     image: "/team/aditya.JPG",
+                    socials: {
+                        linkedin: "https://www.linkedin.com/in/aditya-bajar-495028256",
+                        instagram: "https://www.instagram.com/adityabajar27",
+                    },
+                },
+                {
+                    name: "Rudra Goyal",
+                    role: "Head",
+                    image: "/team/rudra.jpg",
                     socials: {
                         linkedin: "https://www.linkedin.com/in/aditya-bajar-495028256",
                         instagram: "https://www.instagram.com/adityabajar27",
