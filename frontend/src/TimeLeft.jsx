@@ -27,17 +27,17 @@ const Countdown = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center gap-4 text-white text-xl font-semibold mt-4">
+    <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-white text-xl font-semibold mt-4">
       {Object.entries(timeLeft).map(([unit, value]) => (
         <motion.div
           key={unit}
-          className="bg-gray-800 p-4 rounded-lg text-center w-30 transition-transform transform hover:scale-110"
+          className="bg-gray-800 p-3 md:p-4 rounded-lg text-center w-20 md:w-24 transition-transform transform hover:scale-110"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <span className="text-3xl font-bold">{value}</span>
-          <div className="text-sm uppercase">{unit}</div>
+          <span className="text-2xl md:text-3xl font-bold">{value}</span>
+          <div className="text-xs md:text-sm uppercase">{unit}</div>
         </motion.div>
       ))}
     </div>
