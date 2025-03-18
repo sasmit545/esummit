@@ -86,6 +86,7 @@ const SponsorsPage = () => {
     <div className="w-full flex justify-center">
       <div className="w-full max-w-4xl overflow-hidden rounded-lg shadow-lg z-10 relative">
         <iframe
+         title="Sponsor Video" 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.081871945707!2d84.84872167392275!3d25.535649617911687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed577f6954a4ab%3A0x6ce8f1b9fc2aa02a!2sIndian%20Institute%20of%20Technology%2C%20Patna!5e0!3m2!1sen!2sin!4v1742280078092!5m2!1sen!2sin"
           className="w-full h-[300px] sm:h-[400px] md:h-[450px] border-0"
           allowFullScreen=""

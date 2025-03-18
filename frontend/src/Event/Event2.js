@@ -45,20 +45,20 @@ const Event2 = () => {
           </p>
 
           {/* Links Section */}
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col sm:flex-row gap-4">
             <a
               href="https://forms.gle/vjbqJzDsJ8bSU4yaA"
+              className="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300 text-center"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
             >
               Register Now
             </a>
             <a
               href="https://drive.google.com/file/d/17nhZqooEVe-V0j0e6iYgEgN6nHmVbh4a/view?usp=drivesdk"
+              className="bg-gray-800 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-900 transition duration-300 text-center"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-4 inline-block text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-900 transition duration-300"
             >
               View Rulebook
             </a>
