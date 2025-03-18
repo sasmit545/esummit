@@ -1,9 +1,21 @@
-import React from "react";
+
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaGithub } from "react-icons/fa";
 import '../App.css';
-
+import React, { useState, useEffect } from "react";
+import Loader from "../loader/loader";
 
 const Team = () => {
+    const [loading, setLoading] = useState(true);
+    const [teamData, setTeamData] = useState([]);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setTeamData(head_data);
+            setLoading(false);
+        }, 1000); // Simulating data fetch delay
+    }, []);
+
+
     const head_data = [
         {
             role: "Overall Coordinators",
@@ -92,94 +104,78 @@ const Team = () => {
         },
     ];
 
-    const advisory_data = [
-        {
-            name: "Arthur Melo",
-            role: "Senior Advisor",
-            image:
-                "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80",
-            socials: {
-                facebook: "#",
-                twitter: "#",
-                linkedin: "#",
-            },
-        },
-        {
-            name: "Pamela Anderson",
-            role: "Lead Advisor",
-            image:
-                "https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&auto=format&fit=crop&w=764&q=80",
-            socials: {
-                facebook: "#",
-                twitter: "#",
-                linkedin: "#",
-            },
-        },
-
-    ];
 
     return (
         <>
+
             <div
                 className="fixed inset-0 bg-no-repeat bg-cover bg-center z-[-1]"
                 style={{ backgroundImage: "url('/main/background.png')" }}
             ></div>
-            <section>
-                <div className="container px-6 py-10 mx-auto">
-                    <h1 className="text-3xl font-semibold text-center text-white">
-                        Meet Our Team
-                    </h1>
 
-                    <p className="max-w-2xl mx-auto my-6 text-center text-gray-300">
-                        A team of professionals dedicated to excellence.
-                    </p>
 
-                    {head_data.map((category, index) => (
-                        <div key={index}>
-                            <h3 className="text-xl font-semibold text-center text-white lg:text-2xl mt-6">
-                                {category.role}
-                            </h3>
-                            <div className="grid grid-cols-1 gap-6 mt-6 sm:gap-8 xl:mt-8 md:grid-cols-2 xl:grid-cols-2">
-                                {category.data.map((member, subIndex) => (
-                                    <div
-                                        key={subIndex}
-                                        className="group flex flex-col items-center p-6 transition-all duration-300 transform border border-gray-700 bg-gray-800 bg-opacity-90 rounded-xl hover:shadow-lg hover:scale-105"
-                                    >
-                                        <img
-                                            className="object-cover w-36 h-36 rounded-full ring-4 ring-gray-600 group-hover:ring-[#D36D36] transition-all duration-300"
-                                            src={member.image}
-                                            alt={member.name}
-                                        />
-                                        <h1 className="mt-2 text-xl font-bold text-white">
-                                            {member.name}
-                                        </h1>
-                                        <p className="mt-1 text-sm font-medium text-[#D36D36]">
-                                            {member.role}
-                                        </p>
-                                        <div className="flex mt-4 space-x-4">
-                                            {Object.entries(member.socials).map(([platform, link]) => (
-                                                <a
-                                                    key={platform}
-                                                    href={link}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="text-gray-300 hover:text-blue-400 transition-colors duration-300"
-                                                >
-                                                    {platform === "linkedin" && <FaLinkedinIn className="w-5 h-5" />}
-                                                    {platform === "twitter" && <FaTwitter className="w-5 h-5" />}
-                                                    {platform === "facebook" && <FaFacebookF className="w-5 h-5" />}
-                                                    {platform === "instagram" && <FaInstagram className="w-5 h-5" />}
-                                                    {platform === "github" && <FaGithub className="w-5 h-5" />}
-                                                </a>
-                                            ))}
+            {loading ?
+                <Loader /> :
+                <section>
+                    <div className="container px-6 py-10 mx-auto">
+                        <h1 className="text-5xl font-bold text-center text-white">
+                            Meet Our Team
+                        </h1>
+
+                        <p className="max-w-2xl mx-auto my-6 text-center text-gray-300">
+                            A team of professionals dedicated to excellence.
+                        </p>
+
+                        {head_data.map((category, index) => (
+                            <div key={index}>
+                                <h3 className="text-xl font-semibold text-center text-white lg:text-2xl mt-6">
+                                    {category.role}
+                                </h3>
+                                <div className="grid grid-cols-1 gap-6 mt-6 sm:gap-8 xl:mt-8 md:grid-cols-2 xl:grid-cols-2">
+                                    {category.data.map((member, subIndex) => (
+                                        <div
+                                            key={subIndex}
+                                            className="group flex flex-col items-center p-6 transition-all duration-300 transform border border-gray-700 bg-gray-800 bg-opacity-90 rounded-xl hover:shadow-lg hover:scale-105"
+                                        >
+                                            <img
+                                                className="object-cover w-36 h-36 rounded-full ring-4 ring-gray-600 group-hover:ring-[#D36D36] transition-all duration-300"
+                                                src={member.image}
+                                                alt={member.name}
+                                            />
+                                            <h1 className="mt-2 text-xl font-bold text-white">
+                                                {member.name}
+                                            </h1>
+                                            <p className="mt-1 text-sm font-medium text-[#D36D36]">
+                                                {member.role}
+                                            </p>
+                                            <div className="flex mt-4 space-x-4">
+                                                {Object.entries(member.socials).map(([platform, link]) => (
+                                                    <a
+                                                        key={platform}
+                                                        href={link}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-gray-300 hover:text-blue-400 transition-colors duration-300"
+                                                    >
+                                                        {platform === "linkedin" && <FaLinkedinIn className="w-5 h-5" />}
+                                                        {platform === "twitter" && <FaTwitter className="w-5 h-5" />}
+                                                        {platform === "facebook" && <FaFacebookF className="w-5 h-5" />}
+                                                        {platform === "instagram" && <FaInstagram className="w-5 h-5" />}
+                                                        {platform === "github" && <FaGithub className="w-5 h-5" />}
+                                                    </a>
+                                                ))}
+                                            </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
+                        ))}
+                    </div>
+                </section>
+
+
+            }
+
         </>
 
 
