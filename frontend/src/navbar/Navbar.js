@@ -1,162 +1,77 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import SocialSidebar from "./sideNav";
+import { motion } from "framer-motion";
+import { X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation(); // Get the current route
+  const location = useLocation();
 
-  const toggleNavbar = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeNavbar = () => {
-    setIsOpen(false);
-  };
-
-  // Function to check if a link is active
-  const isActive = (path) => {
-    return location.pathname === path;
-  };
+  const toggleNavbar = () => setIsOpen(!isOpen);
+  const closeNavbar = () => setIsOpen(false);
+  const isActive = (path) => location.pathname === path;
 
   return (
     <>
       <nav
-        className="flex justify-between items-center px-9 py-3 text-white"
-        style={{
-          position: 'fixed',
-          width: '100%',
-          backgroundColor: 'rgba(26, 27, 36, 0.9)',
-          zIndex: 50,
-        }}
+        className="flex justify-between items-center px-9 py-3 text-white fixed w-full bg-[rgba(26,27,36,0.9)] z-50"
       >
-        {/* Logo */}
         <Link to="/" className="flex items-center">
           <img src="/logo.png" alt="Logo" className="h-14 mr-4" />
         </Link>
 
-        {/* Navbar Links */}
-        <ul className={`md:flex gap-10 hidden`}>
-          <li>
-            <Link
-              to="/"
-              className={`hover:text-[#00aaff] transition-all ${
-                isActive('/') ? 'text-[#00aaff] font-bold' : ''
-              }`}
-              onClick={closeNavbar}
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/events"
-              className={`hover:text-[#00aaff] transition-all ${
-                isActive('/events') ? 'text-[#00aaff] font-bold' : ''
-              }`}
-              onClick={closeNavbar}
-            >
-              Events
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/speakers"
-              className={`hover:text-[#00aaff] transition-all ${
-                isActive('/speakers') ? 'text-[#00aaff] font-bold' : ''
-              }`}
-              onClick={closeNavbar}
-            >
-              Speakers
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/team"
-              className={`hover:text-[#00aaff] transition-all ${
-                isActive('/team') ? 'text-[#00aaff] font-bold' : ''
-              }`}
-              onClick={closeNavbar}
-            >
-              Team
-            </Link>
-          </li>
+        <ul className="md:flex gap-10 hidden text-[20px]">
+          {["/", "/events", "/speakers", "/team"].map((path, index) => (
+            <li key={index}>
+              <Link
+                to={path}
+                className={`transition-all pb-2 break-words ${
+                  isActive(path) ? "text-[#00aaff] font-bold" : ""
+                } hover:shadow-[0_3px_0_#00aaff]`}
+                onClick={closeNavbar}
+              >
+                {path === "/" ? "Home" : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
+              </Link>
+            </li>
+          ))}
         </ul>
 
-        {/* Hamburger Icon */}
         <div className="md:hidden flex flex-col gap-1 cursor-pointer" onClick={toggleNavbar}>
           <span className="w-6 h-[3px] bg-white"></span>
           <span className="w-6 h-[3px] bg-white"></span>
           <span className="w-6 h-[3px] bg-white"></span>
         </div>
-
-        {/* Mobile Navbar */}
-        {isOpen && (
-          <ul
-            className="absolute top-16 left-0 w-full bg-[#1e1e1e] flex flex-col items-center py-16 gap-6 z-50 animate-slideDown"
-            style={{
-              position: 'fixed',
-              width: '100%',
-              backgroundColor: 'rgba(26, 27, 36, 0.9)',
-              zIndex: 50,
-              marginTop: '12',
-            }}
-          >
-            <li>
-              <Link
-                to="/"
-                className={`hover:text-[#00aaff] ${
-                  isActive('/') ? 'text-[#00aaff] font-bold' : ''
-                }`}
-                onClick={closeNavbar}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/events"
-                className={`hover:text-[#00aaff] ${
-                  isActive('/events') ? 'text-[#00aaff] font-bold' : ''
-                }`}
-                onClick={closeNavbar}
-              >
-                Events
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/speakers"
-                className={`hover:text-[#00aaff] ${
-                  isActive('/speakers') ? 'text-[#00aaff] font-bold' : ''
-                }`}
-                onClick={closeNavbar}
-              >
-                Speakers
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/team"
-                className={`hover:text-[#00aaff] ${
-                  isActive('/team') ? 'text-[#00aaff] font-bold' : ''
-                }`}
-                onClick={closeNavbar}
-              >
-                Team
-              </Link>
-            </li>
-          </ul>
-        )}
       </nav>
 
-      <div
-        style={{
-          width: '100%',
-          height: '75px',
-          position: 'relative',
-          backgroundImage: "url('background.png')",
-        }}
-      ></div>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="fixed inset-0 bg-black/30 backdrop-blur-md flex flex-col items-center justify-center gap-4 z-50"
+        >
+          <button onClick={closeNavbar} className="absolute top-6 right-6">
+            <X size={32} className="text-white" />
+          </button>
+
+          {["/", "/events", "/speakers", "/team"].map((path, index) => (
+            <Link
+              key={index}
+              to={path}
+              onClick={closeNavbar}
+              className={`text-2xl font-semibold transition-all px-4 py-2 rounded-md ${
+                isActive(path) ? "text-[#00aaff] font-bold" : "text-white hover:text-[#00aaff]"
+              }`}
+            >
+              {path === "/" ? "Home" : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
+            </Link>
+          ))}
+        </motion.div>
+      )}
+
+      <div className="w-full h-[75px] relative bg-cover" style={{ backgroundImage: "url('background.png')" }}></div>
+      <SocialSidebar />
     </>
   );
 };

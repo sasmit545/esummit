@@ -50,16 +50,16 @@ const Footer = () => {
         <div class="md:absolute md:right-[6rem] md:bottom-[17rem] flex flex-col gap-6 mt-10 md:mt-0 items-center md:items-start text-center">
   <h2 class="text-2xl font-bold text-center">SOCIALS</h2> 
   <div class="flex gap-8 md:justify-start justify-center">
-    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="group">
+    <a href="https://www.instagram.com/ecell_iitpatna/" target="_blank" rel="noopener noreferrer" class="group">
       <img alt="Instagram" class="w-8 h-8 transition-transform duration-300 transform group-hover:scale-110" src="instagram.png" />
     </a>
-    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" class="group">
+    <a href="https://x.com/ecelliitp/" target="_blank" rel="noopener noreferrer" class="group">
       <img alt="Twitter" class="w-8 h-8 transition-transform duration-300 transform group-hover:scale-110" src="twitter.png"/>
     </a>
-    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="group">
+    <a href="https://www.facebook.com/ecelliitp/" target="_blank" rel="noopener noreferrer" class="group">
       <img alt="Facebook" class="w-8 h-8 transition-transform duration-300 transform group-hover:scale-110" src="facebook.png"/>
     </a>
-    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="group">
+    <a href="https://www.linkedin.com/company/ecell-iit-patna/" target="_blank" rel="noopener noreferrer" class="group">
       <img alt="LinkedIn" class="w-8 h-8 transition-transform duration-300 transform group-hover:scale-110" src="linkedin.png"/>
     </a>
   </div>

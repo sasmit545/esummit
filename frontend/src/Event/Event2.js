@@ -1,9 +1,9 @@
 import React from "react";
-import quize from "./quiz.jpg";
+import quize from "./bizz.png";
 
 const Event2 = () => {
   return (
-    <div className="bg-white min-h-screen flex justify-center items-center px-6 py-10 relative overflow-auto">
+    <div className=" min-h-screen flex justify-center items-center px-6 py-10 relative overflow-auto">
       {/* Background geometric shapes */}
       <div className="absolute top-0 left-0 w-full h-full -z-10">
         <div className="absolute top-0 left-0 w-24 h-24 bg-blue-600 clip-triangle rotate-45"></div>
@@ -24,8 +24,8 @@ const Event2 = () => {
 
         {/* Left Section - Text Content */}
         <div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">BIZZ QUIZ</h1>
-          <p className="text-gray-700 text-lg leading-relaxed">
+          <h1 className="text-4xl font-bold text-white mb-4">BIZZ QUIZ</h1>
+          <p className="text-white text-lg leading-relaxed">
             <span className="font-semibold text-blue-600">
               BizzQuiz at E-Summit'25, hosted by the Quiz Club,
             </span>{" "}
@@ -35,7 +35,7 @@ const Event2 = () => {
             market trends, and the compelling stories behind some of the world’s
             most successful companies.
           </p>
-          <p className="text-gray-700 text-lg leading-relaxed mt-3">
+          <p className="text-white text-lg leading-relaxed mt-3">
             Designed for business enthusiasts, budding entrepreneurs, and those
             with a passion for global economic forces, BizzQuiz offers a dynamic
             platform to explore the depths of the business world while competing
@@ -45,20 +45,20 @@ const Event2 = () => {
           </p>
 
           {/* Links Section */}
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col sm:flex-row gap-4">
             <a
               href="https://forms.gle/vjbqJzDsJ8bSU4yaA"
+              className="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300 text-center"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
             >
               Register Now
             </a>
             <a
               href="https://drive.google.com/file/d/17nhZqooEVe-V0j0e6iYgEgN6nHmVbh4a/view?usp=drivesdk"
+              className="bg-gray-800 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-900 transition duration-300 text-center"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-4 inline-block bg-gray-800 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-900 transition duration-300"
             >
               View Rulebook
             </a>
